@@ -1,0 +1,196 @@
+
+/* Valentine’s Day Styles */
+:root {
+    --main-color: #ff5678;
+    --secondary-color: #ff304f;
+    --heart-size: 20px;
+}
+
+body {
+    background: #ffccd5;
+    font-family: 'Dancing Script';
+    color: var(--main-color);
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    margin: 0;
+}
+
+h1 {
+    margin-top: 50px;
+}
+
+div {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Valentine Container Styles (Raise it 40% Higher) */
+div {
+    position: relative;
+    top: 10.5%; /* Move Valentine container 40% higher */
+    text-align: center;
+}
+
+h1 {
+    color: #ff477e;
+}
+
+#message {
+    font-size: 2em;
+    margin-top: 20px;
+    opacity: 0; /* Start Hidden */
+    transition: opacity 1s ease-in-out;
+}
+
+.heart {
+    position: absolute;
+    width: var(--heart-size);
+    height: var(--heart-size);
+    background: red;
+    transform: rotate(45deg);
+    animation: fall 2.5s linear infinite;
+    z-index: 1000;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: var(--heart-size);
+    height: var(--heart-size);
+    background: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -10px;
+}
+
+@keyframes fall {
+    0% {
+        top: -50px;
+        opacity: 1;
+    }
+    100% {
+        top: 100vh;
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+}
+
+#message {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Dancing Script", cursive;
+    text-align: center;
+}
+
+/* Love Letter Styles */
+.love-letter-container {
+  position: fixed; /* Fix it on the page */
+  top: 65%; /* Lower it more */
+  left: 50%; /* Horizontally center */
+  transform: translate(-50%, -50%); /* Adjust positioning to exactly center */
+  max-width: 650px; /* Make the letter wider */
+  background-color: transparent; /* Remove white background */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1em; /* Adjust the font size for better readability */
+  z-index: 10;
+}
+
+.love-letter-container .header {
+  text-align: center;
+  font-size: 2.5em; /* Adjust header size */
+  font-weight: bold;
+  color: #d21f1f;
+  margin-bottom: 20px;
+}
+
+.love-letter-container .letter-content {
+  line-height: 1.8;
+  font-size: 1.1em; /* Adjust the font size for content */
+}
+
+.love-letter-container .signature {
+  text-align: right;
+  font-style: italic;
+  margin-top: 40px;
+  font-size: 1.3em; /* Adjust signature font size */
+}
+
+.love-letter-container .footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #a27a56;
+  margin-top: 50px;
+  border-top: 2px solid #d21f1f;
+  padding-top: 10px;
+}
+
+/* Fade Animation for Image Switching */
+/* @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    40% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  } */
+
+/* Image Container Styles */
+.image-container,
+.image-container2,
+.image-container3 {
+  position: absolute;
+  top: 10.5%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.image-container { left: 58.75%; }
+.image-container2 { left:70%; }
+.image-container3 { left: 47.25%; }
+
+/* Image Styling (Kept Original Size & Position) */
+.image-container img,
+.image-container2 img,
+.image-container3 img {
+  width: 35%; /* Keeps original size */
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* Start hidden */
+  display: none; /* Hide initially */
+  transition: opacity ease-in-out;
+  z-index: 2; 
+}
+
+/* Ensure the first image in each container is visible initially */
+.image-container img:first-child,
+.image-container2 img:first-child,
+.image-container3 img:first-child {
+  opacity: 1;
+  display: block;
+}
+
+
+
+
+
